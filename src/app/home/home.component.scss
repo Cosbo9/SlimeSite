@@ -2,8 +2,30 @@
     display: flex;
     flex-direction: column;
     mat-card {
-        width: 75%;
+        width: 85%;
         align-self: center;
         margin: 2rem;
+        mat-card-title {
+            text-align: center;
+            h3 {
+                font-size: 2rem;
+                font-weight: 600;
+            }
+        }
+        mat-card-content {
+            display: flex;
+            justify-content: space-around;
+            img {
+                width: 20%;
+            }
+        }
+        mat-card-footer {
+            display: flex;
+            justify-content: center;
+            button {
+                width: 50%;
+                margin: 1.5rem;
+            }
+        }
     }
 }
