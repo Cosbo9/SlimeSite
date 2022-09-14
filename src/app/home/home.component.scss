@@ -1,0 +1,9 @@
+.HomeContainer {
+    display: flex;
+    flex-direction: column;
+    mat-card {
+        width: 75%;
+        align-self: center;
+        margin: 2rem;
+    }
+}
