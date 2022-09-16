@@ -2,20 +2,23 @@
     <mat-card>
         <mat-card-title>
             <h3>1 hour tattoo</h3>
+            <h5>$50 - $150</h5>
         </mat-card-title>
-        <mat-card-content>
-            <img mat-card-image src="../../assets/1hr1.png" alt="1 hour tattoo ex: 1">
-            <img mat-card-image src="../../assets/1hr2.jpg" alt="1 hour tattoo ex: 2">
-            <img mat-card-image src="../../assets/1hr3.jpg" alt="1 hour tattoo ex: 3">
-            <img mat-card-image src="../../assets/1hr4.jpg" alt="1 hour tattoo ex: 4">
-        </mat-card-content>
+        <div class="gallery">
+            <mat-card-content *ngFor="let img of galleryData; let i=index">
+                <img (click)="onPreviewImage(i)" mat-card-image [src]="img.imageSrc" [alt]="img.imageAlt">
+            </mat-card-content>
+        </div>
         <mat-card-footer>
-            <button mat-raised-button color="primary">Book with me!</button>
+            <button mat-raised-button color="primary">
+                <a href="https://www.instagram.com/slimedieselx/?hl=en" target="_blank">Book with me!</a>
+            </button>
         </mat-card-footer>
     </mat-card>
     <mat-card>
         <mat-card-title>
             <h3>2 hour tattoo</h3>
+            <h5>$200 - $300</h5>
         </mat-card-title>
         <mat-card-content>
             <img mat-card-image src="" alt="tattoo ex: 1">
@@ -30,6 +33,7 @@
     <mat-card>
         <mat-card-title>
             <h3>3 hour tattoo</h3>
+            <h5>$350 - $500</h5>
         </mat-card-title>
         <mat-card-content>
             <img mat-card-image src="" alt="tattoo ex: 1">
@@ -41,4 +45,14 @@
             <button mat-raised-button color="primary">Book with me!</button>
         </mat-card-footer>
     </mat-card>
+</div>
+
+<div *ngIf="showMask" class="imgVeiwer">
+    <span *ngIf="showCount" class="count">{{currentIndex + 1}}/{{totalImageCount}}</span>
+    <button *ngIf="previewImage" class="closeBtn"></button>
+    <button *ngIf="controls" class="btnPrev"></button>
+    <button *ngIf="controls" class="btnNext"></button>
+    <div *ngIf="previewImage" class="img">
+        <img src="" alt="">
+    </div>
 </div>
