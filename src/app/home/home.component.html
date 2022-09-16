@@ -15,6 +15,7 @@
             </button>
         </mat-card-footer>
     </mat-card>
+
     <mat-card>
         <mat-card-title>
             <h3>2 hour tattoo</h3>
@@ -47,12 +48,32 @@
     </mat-card>
 </div>
 
-<div *ngIf="showMask" class="imgVeiwer">
+<!-- image viewer component  -->
+<div *ngIf="showMask" class="imgViewer">
     <span *ngIf="showCount" class="count">{{currentIndex + 1}}/{{totalImageCount}}</span>
-    <button *ngIf="previewImage" class="closeBtn"></button>
-    <button *ngIf="controls" class="btnPrev"></button>
-    <button *ngIf="controls" class="btnNext"></button>
+    <button *ngIf="previewImage" class="closeBtn">
+            <mat-icon aria-label="close" fontIcon="close" (click)="onClose()">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </mat-icon>
+        </button>
+    <button *ngIf="controls" class="btnPrev">
+            <mat-icon aria-label="previous image icon" fontIcon="chevron_left">
+                <span class="material-symbols-outlined">
+                    chevron_left
+                </span>
+            </mat-icon>
+        </button>
+    <button *ngIf="controls" class="btnNext">
+            <mat-icon aria-label="next image icon" fontIcon="chevron_right">
+                <span class="material-symbols-outlined">
+                    chevron_right
+                </span>
+            </mat-icon>
+        </button>
     <div *ngIf="previewImage" class="img">
-        <img src="" alt="">
+        <img [src]="currentImage.imageSrc" alt="currentImage.imageAlt">
     </div>
 </div>
+<!-- image viewer component end -->

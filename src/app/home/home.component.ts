@@ -46,8 +46,16 @@ export class HomeComponent implements OnInit {
   }
 
   onPreviewImage(index: number) {
+    this.showMask = true;
+    this.previewImage = true;
     this.currentIndex = index;
+    this.currentImage = this.galleryData[index];
     console.log("onPreviewImage")
+  }
+
+  onClose() {
+    this.showMask = false;
+    this.previewImage = false;
   }
 
 
