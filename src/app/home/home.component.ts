@@ -43,6 +43,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.totalImageCount = this.galleryData.length
+    console.log(this.totalImageCount)
   }
 
   onPreviewImage(index: number) {
@@ -50,7 +51,8 @@ export class HomeComponent implements OnInit {
     this.previewImage = true;
     this.currentIndex = index;
     this.currentImage = this.galleryData[index];
-    console.log("onPreviewImage")
+    console.log(this.totalImageCount)
+    console.log(this.currentIndex)
   }
 
   onClose() {
