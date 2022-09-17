@@ -51,15 +51,15 @@
 <!-- image viewer component  -->
 <div *ngIf="showMask" class="imgViewer">
     <span class="count">{{currentIndex + 1}}/{{totalImageCount}}</span>
-    <button *ngIf="previewImage" class="closeBtn">
+    <button *ngIf="previewImage" class="closeBtn" mat-icon-button>
         <mat-icon aria-label="close" fontIcon="close" (click)="onClose()">
             <span class="material-symbols-outlined">
                 close
             </span>
         </mat-icon>
     </button>
-    <button *ngIf="controls" class="btnPrev">
-        <mat-icon aria-label="previous image icon" fontIcon="chevron_left">
+    <button *ngIf="controls" class="btnPrev" mat-fab>
+        <mat-icon aria-label="previous image icon" fontIcon="chevron_left" (click)="onPreviousImage()">
             <span class="material-symbols-outlined">
                 chevron_left
             </span>
@@ -68,8 +68,8 @@
     <div *ngIf="previewImage" class="img">
         <img [src]="currentImage.imageSrc" alt="currentImage.imageAlt">
     </div>
-    <button *ngIf="controls" class="btnNext">
-        <mat-icon aria-label="next image icon" fontIcon="chevron_right">
+    <button *ngIf="controls" class="btnNext" mat-fab>
+        <mat-icon aria-label="next image icon" fontIcon="chevron_right" (click)="onNextImage()">
             <span class="material-symbols-outlined">
                 chevron_right
             </span>

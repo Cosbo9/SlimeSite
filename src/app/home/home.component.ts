@@ -1,10 +1,11 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import { Image } from '../models/image';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   @Input() showCount = false;
@@ -51,14 +52,30 @@ export class HomeComponent implements OnInit {
     this.previewImage = true;
     this.currentIndex = index;
     this.currentImage = this.galleryData[index];
-    console.log(this.totalImageCount)
-    console.log(this.currentIndex)
   }
 
   onClose() {
     this.showMask = false;
     this.previewImage = false;
   }
+
+  onNextImage() {
+    this.currentIndex = this.currentIndex + 1;
+    if (this.currentIndex >= this.galleryData.length) {
+      this.currentIndex = 0;
+    }
+    this.currentImage = this.galleryData[this.currentIndex]
+  }
+
+  onPreviousImage() {
+    this.currentIndex = this.currentIndex - 1;
+    if (this.currentIndex < 0) {
+      this.currentIndex = this.galleryData.length - 1
+    }
+    this.currentImage = this.galleryData[this.currentIndex]
+  }
+
+
 
 
 }
