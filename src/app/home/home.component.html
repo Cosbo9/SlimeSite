@@ -58,8 +58,8 @@
             </span>
         </mat-icon>
     </button>
-    <button *ngIf="controls" class="btnPrev" mat-fab>
-        <mat-icon aria-label="previous image icon" fontIcon="chevron_left" (click)="onPreviousImage()">
+    <button *ngIf="controls" class="btnPrev" mat-fab (click)="onPreviousImage()">
+        <mat-icon aria-label="previous image icon" fontIcon="chevron_left">
             <span class="material-symbols-outlined">
                 chevron_left
             </span>
@@ -68,8 +68,8 @@
     <div *ngIf="previewImage" class="img">
         <img [src]="currentImage.imageSrc" alt="currentImage.imageAlt">
     </div>
-    <button *ngIf="controls" class="btnNext" mat-fab>
-        <mat-icon aria-label="next image icon" fontIcon="chevron_right" (click)="onNextImage()">
+    <button *ngIf="controls" class="btnNext" mat-fab (click)="onNextImage()">
+        <mat-icon aria-label="next image icon" fontIcon="chevron_right">
             <span class="material-symbols-outlined">
                 chevron_right
             </span>
