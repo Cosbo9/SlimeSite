@@ -22,14 +22,15 @@
         .gallery {
             display: flex;
             justify-content: space-around;
+            border: 1px solid red;
             mat-card-content {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 margin-top: 1.5rem;
                 img {
-                    height: 15rem;
-                    width: 13rem;
+                    height: 45vh;
+                    width: 15vw;
                     cursor: zoom-in;
                 }
             }
@@ -74,23 +75,91 @@
         color: #fff;
     }
     .btnPrev {
-        position: absolute;
         left: 0;
-        margin: 2vw;
-        color: #414141;
-        background-color: #fff;
     }
-    .img {
-        img {
-            width: auto;
-            height: 35rem;
-        }
+    img {
+        width: auto;
+        height: 100vh;
     }
     .btnNext {
-        position: absolute;
         right: 0;
+    }
+    .btnNext,
+    .btnPrev {
+        position: absolute;
         margin: 2vw;
         color: #414141;
         background-color: #fff;
+        opacity: .5;
+    }
+    .btnNext:hover,
+    .btnPrev:hover {
+        opacity: .85;
+    }
+}
+
+@media(max-width: 980px) {
+    .HomeContainer {
+        mat-card {
+            .gallery {
+                border: none;
+                mat-card-content {
+                    img {
+                        width: 20vw;
+                        height: 35vh;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 650px) {
+    .HomeContainer {
+        mat-card {
+            .gallery {
+                display: flex;
+                flex-direction: column;
+                mat-card-content {
+                    img {
+                        width: 50vw;
+                        height: 60vh;
+                    }
+                }
+            }
+        }
+    }
+    .imgViewer {
+        img {
+            height: 70vh;
+        }
+        .btnNext,
+        .btnPrev {
+            width: 2rem;
+            height: auto;
+        }
+    }
+}
+
+@media(max-width: 400px) {
+    .HomeContainer {
+        mat-card {
+            .gallery {
+                mat-card-content {
+                    img {
+                        height: 40vh;
+                    }
+                }
+            }
+        }
+    }
+    .imgViewer {
+        img {
+            height: 60vh;
+        }
+        .btnNext,
+        .btnPrev {
+            bottom: 0;
+        }
     }
 }
