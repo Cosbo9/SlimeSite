@@ -9,6 +9,7 @@ import { Image } from '../models/image';
 })
 export class HomeComponent implements OnInit {
   @Input() showCount = false;
+
   
   galleryData: Image[] = [
     {
@@ -44,8 +45,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.totalImageCount = this.galleryData.length
-    console.log(this.totalImageCount)
   }
+
 
   onPreviewImage(index: number) {
     this.showMask = true;

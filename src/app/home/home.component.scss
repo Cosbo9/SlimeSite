@@ -22,7 +22,6 @@
         .gallery {
             display: flex;
             justify-content: space-around;
-            border: 1px solid red;
             mat-card-content {
                 display: flex;
                 justify-content: center;
@@ -135,8 +134,22 @@
         }
         .btnNext,
         .btnPrev {
-            width: 2rem;
+            width: 3rem;
             height: auto;
+        }
+    }
+}
+
+@media(max-width: 500px) {
+    .HomeContainer {
+        mat-card {
+            .gallery {
+                mat-card-content {
+                    img {
+                        height: 30vh;
+                    }
+                }
+            }
         }
     }
 }
@@ -147,7 +160,7 @@
             .gallery {
                 mat-card-content {
                     img {
-                        height: 40vh;
+                        height: 20vh;
                     }
                 }
             }
@@ -159,7 +172,11 @@
         }
         .btnNext,
         .btnPrev {
-            bottom: 0;
+            background: transparent;
+            opacity: 1;
+            mat-icon {
+                color: #414141
+            }
         }
     }
 }
