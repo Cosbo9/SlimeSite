@@ -26,7 +26,7 @@ export class GalleryComponent implements OnInit {
         const formData = new FormData();
 
         formData.append("thumbnail", file);
-
+        
         const upload$ = this.http.post("/api/thumbnail-upload", formData);
 
         upload$.subscribe();
