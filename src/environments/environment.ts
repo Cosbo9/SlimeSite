@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyBjIKaiYEjtnlD2bVtRu1LvIGjNpEPuB7k",
+    authDomain: "slime-21058.firebaseapp.com",
+    projectId: "slime-21058",
+    storageBucket: "slime-21058.appspot.com",
+    messagingSenderId: "528421546165",
+    appId: "1:528421546165:web:63880913ede1bfa3b5f6fc",
+    measurementId: "G-41JRRHJEER"
+  }
 };
 
 /*
