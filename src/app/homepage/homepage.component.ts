@@ -3,21 +3,19 @@ import { SliderInterface } from '../sharedComponents/image-slider/slide.interfac
 
 @Component({
   selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  template: ` <p>homepage works!</p>
+    <app-image-slider [slides]="slideImages"></app-image-slider>`,
+  styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent implements OnInit {
-
   slideImages: SliderInterface[] = [
-    {url: '../../assets/exTat1.png', title: "example 1"},
-    {url: '../../assets/exTat2.png', title: "example 2"},
-    {url: '../../assets/exTat3.png', title: "example 3"},
-    {url: '../../assets/exTat4.png', title: "example 4"},
-  ]
+    { url: '../../assets/exTat1.png', title: 'example 1' },
+    { url: '../../assets/exTat2.png', title: 'example 2' },
+    { url: '../../assets/exTat3.png', title: 'example 3' },
+    { url: '../../assets/exTat4.png', title: 'example 4' },
+  ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
