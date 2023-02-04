@@ -4,25 +4,26 @@ import { SliderInterface } from './slide.interface';
 @Component({
   selector: 'app-image-slider',
   template: `
-<div class="slider">
-  <div>
-    <div (click)="goToPrevious()" class="leftArrow">❰</div>
-    <div (click)="goToNext()" class="rightArrow">❱</div>
-  </div>
-  <div
-    class="slide"
-    [ngStyle]="{ 'background-image': getCurrentSlideUrl(), 'background-repeat': 'no-repeat', 'background-size': '100% 100%', 'height': '100%', 'width': 'auto' }"
-  ></div>
-  <div class="dotsContainer">
-    <div
-      *ngFor="let slide of slides; let slideIndex = index"
-      class="dot"
-      (click)="goToSlide(slideIndex)"
-    >
-      ●
+    <div class="sliderContainer">
+      <div class="slider">
+        <div>
+          <div (click)="goToPrevious()" class="leftArrow">❰</div>
+          <div (click)="goToNext()" class="rightArrow">❱</div>
+        </div>
+        <div class="slide">
+          <div
+            [ngStyle]="{
+              'background-image': getCurrentSlideUrl(),
+              'background-repeat': 'no-repeat',
+              'background-position': 'center',
+              'height': '100%',
+              'background-size': '35%'
+            }"
+          ></div>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
     </div>
-  </div>
-</div>
   `,
   styleUrls: ['./image-slider.component.css'],
 })
@@ -63,11 +64,6 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
 
     this.resetTimer();
     this.currentIndex = newIndex;
-  }
-
-  goToSlide(slideIndex: number): void {
-    this.resetTimer();
-    this.currentIndex = slideIndex;
   }
 
   getCurrentSlideUrl(): string {

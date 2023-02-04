@@ -3,8 +3,11 @@ import { SliderInterface } from '../sharedComponents/image-slider/slide.interfac
 
 @Component({
   selector: 'app-homepage',
-  template: ` <p>homepage works!</p>
-    <app-image-slider [slides]="slideImages"></app-image-slider>`,
+  template: `
+    <div class="homeContainer">
+      <app-image-slider [slides]="slideImages"></app-image-slider>
+    </div>
+  `,
   styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent implements OnInit {
