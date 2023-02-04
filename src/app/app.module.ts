@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ImageSliderModule } from './sharedComponents/image-slider/image-slider.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { HomepageComponent } from './homepage/homepage.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
